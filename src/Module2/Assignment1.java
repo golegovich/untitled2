@@ -27,12 +27,12 @@ public class Assignment1{
         if (secondMax(intArray) != 0) {
 
             System.out.println("\n\tMaximal of integers: " + max(intArray));
-        } else {
+        } else  if (secondMax(intArray) ==0){
             System.out.println("\n\tNo positive values found");
         }
         if (secondMax(doubleArray) != 0){
             System.out.println("\n\tMaximal of doubles: " + max(doubleArray));
-        }   else {
+        }   else if (secondMax(doubleArray)==0) {
             System.out.println("\n\tNo positive values found");
         }
 
@@ -44,7 +44,7 @@ public class Assignment1{
         else {
             System.out.println("\n\tMaximal positive of integers: " + maxPositive(intArray));
         }
-        if (maxPositive(doubleArray <0)){
+        if (maxPositive(doubleArray)<0){
             System.out.println("No positive values found");
         }
         else    {
