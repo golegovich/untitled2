@@ -1,4 +1,4 @@
-package Module3;
+package Module3.Task1;
 
 /**
  * Created by George on 20/02/2017.
