@@ -10,6 +10,7 @@ public class Student {
     private int group;
     private Course [] coursesTaken;
     private int age;
+    private Course[] couresTaken;
 
     //Hereafter the first constructor starts
     public Student(String firstName, String lastName, int group){
@@ -22,5 +23,9 @@ public class Student {
     public Student(String lastName, Course[] coursesTaken){
         this.lastName = lastName;
         this.coursesTaken = coursesTaken;
+    }
+
+    public void setCouresTaken(Course[] couresTaken) {
+        this.couresTaken = couresTaken;
     }
 }
