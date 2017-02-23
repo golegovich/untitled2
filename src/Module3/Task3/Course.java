@@ -8,9 +8,9 @@ import java.util.Date;
 public class Course  {
 
     private Date startDate;
-    String name;
-    int hoursDuration;
-    String teacherName;
+    private String name;
+    private int hoursDuration;
+    private String teacherName;
 
     //Hereafter we create the first constructor
     public Course (Date startDate, String name){
