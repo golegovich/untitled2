@@ -35,15 +35,86 @@ public class User {
         int balanceAfterWithdrawalWithFee = balance - sum - (int)(sum*(sum<1000? fee1:fee2)/100);
         boolean isWithdrawalPermitted = balanceAfterWithdrawalWithFee >=0;
 
-        showLog(.CURRENT_BALANCE );
+        log(Output.CURRENT_BALANCE + currency + balance);
+        log(Output.WITHDRAWAL_ATTEMPT + currency + sum);
+        log(Output.FEE + (sum < 1000 ? fee1 : fee2) + "%");
+
+        if (!isWithdrawalPermitted){
+            log(Output.WITHDRAWAL_IMPOSSIBLE + currency + balance);
+            log(Output.SPLITTER);
+            return;
+        }
+        log(Output.BALANCE_AFTER_TRANSACTION + currency + balanceAfterWithdrawalWithFee);
+        balance = balanceAfterWithdrawalWithFee;
+
+        log(Output.SUCCESS);
+        log(Output.CURRENT_BALANCE + currency + balance);
+        log(Output.SPLITTER);
     }
 
-    public void showLog(String information){
+    public void log(String information){
         if (!IS_LOG_ENABLED){
             return;
         }
         System.out.println(information);
     }
+    public void paySalary(int addMonth){
+
+        log(Output.EARNED_SALARY + currency + salary);
+        balance -= salary;
+        log(Output.CURRENT_BALANCE + currency + balance);
+        log(Output.SPLITTER);
+    }
+     public int companyNamelength() {
+         return getCompanyName().length();
+     }
+     public void monthIncrement(int addMonth){
+        setMonthsOfEmployment(getMonthsOfEmployment() + addMonth);
+     }
+     public int getMonthsOfEmployment(){
+         return monthsOfEmployment;
+     }
+     public void setMonthsOfEmployment(int monthsOfEmployment){
+         this.monthsOfEmployment = monthsOfEmployment;
+     }
+     public String getCompanyName(){
+         return companyName;
+    }
 
 
+    //Get-set
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
 }
