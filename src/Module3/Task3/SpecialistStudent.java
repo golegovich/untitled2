@@ -20,4 +20,19 @@ public class SpecialistStudent extends CollegeStudent {
     public SpecialistStudent(long secretKey){
         super("","", 0);
     }
+
+    //Get-set
+    public long getSecretKey(){
+        return secretKey;
+    }
+    public void setSecretKey(long secretKey){
+        this.secretKey = secretKey;
+   }
+    public String  getEmail(){
+        return email;
+    }
+    public void setEmail(String email){
+        this.email = email;
+    }
+
 }
