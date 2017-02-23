@@ -24,5 +24,29 @@ public class Course  {
             this.teacherName = teacherName;
     }
 
-
+    //Getters Setters
+    public Date getStartDate(){
+        return startDate;
+    }
+    public void setStartDate(Date startDate){
+        this.startDate = startDate;
+    }
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public int getHoursDuration(){
+        return hoursDuration;
+    }
+    public void setHoursDuration(){
+        this.hoursDuration = hoursDuration;
+    }
+    public String getTeacherName(){
+        return  teacherName;
+    }
+    public void setTeacherName(){
+        this.teacherName = teacherName;
+    }
 }
