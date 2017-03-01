@@ -61,7 +61,7 @@ public class User {
     public void paySalary(int addMonth){
 
         log(Output.EARNED_SALARY + currency + salary);
-        balance -= salary;
+        balance += salary;
         log(Output.CURRENT_BALANCE + currency + balance);
         log(Output.SPLITTER);
     }
