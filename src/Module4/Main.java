@@ -16,6 +16,13 @@ public class Main {
         User user5 = new User (5, "Elizabeth", 4500,500, "UK", 1000, bank3);
         User user6 = new User(6, "Marine", 900, 1, "Front National", 300, bank3);
 
-
+        System.out.println(user1);
+        bank1.withdrawOfUser(user1, 500 );
+        System.out.println(user1);
+        bank1.paySalary(user1);
+        System.out.println(user1);
+        bank1.transferMoney(user2, user1, 1000);
+        System.out.println(user1);
+        bank1.fundUser(user1, 1000);
     }
 }
