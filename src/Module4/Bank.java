@@ -19,7 +19,6 @@ public abstract class Bank implements BankSystem {
     abstract int getLimitOfFunding();
     abstract int getMonthlyRate();
     abstract int getComission(int sum);
-    abstract double moneyPaidMonthlyForSalary();
 
     //get-set
 

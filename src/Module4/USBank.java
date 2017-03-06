@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created by George on 06/03/2017.
  */
-public abstract class USBank extends Bank {
+public class USBank extends Bank {
 
     Currency currency = Currency.USD;
 

@@ -3,7 +3,7 @@ package Module4;
 /**
  * Created by George on 06/03/2017.
  */
-public abstract class EUBank extends Bank {
+public class EUBank extends Bank {
     Currency currency = Currency.EUR;
 
     @Override
