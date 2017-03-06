@@ -15,7 +15,7 @@ public abstract class Bank {
     long rating;
     long totalCapital;
 
-    abstract int getLimitofWithdrawal();
+    abstract int getLimitOfWithdrawal();
     abstract int getLimitOfFunding();
     abstract int getMonthlyRate();
     abstract int getComission(int sum);

@@ -10,7 +10,7 @@ public abstract class USBank extends Bank {
     Currency currency = Currency.USD;
 
     @Override
-    int getLimitofWithdrawal() {
+    int getLimitOfWithdrawal() {
         int limit = 0;
         if (currency.equals(Currency.USD)) {
             limit = 1000;
