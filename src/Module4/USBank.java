@@ -65,7 +65,7 @@ public class USBank extends Bank {
             System.out.println("Withdrawal is impossible, the amount requested is out of the limit");
             return;
         }
-        System.out.println("Withdrawn" + amount + currency.toString());
+        System.out.println("Withdrawn " + amount + currency.toString());
         System.out.println("Fee taken: " + getComission(amount) + "%");
         amount += (getComission(amount) * amount / 100);
 
@@ -79,7 +79,7 @@ public class USBank extends Bank {
 
     @Override
     public void fundUser(User user, int amount) {
-        System.out.println("Funding" + amount + currency.toString() + "to" + user.getName());
+        System.out.println("Funding " + amount + currency.toString() + " to " + user.getName());
         if (getLimitOfFunding()>0 && amount > getLimitOfFunding()){
             System.out.println("Funding is impossible. Funding limit exceeded");
             return;

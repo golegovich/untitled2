@@ -25,7 +25,23 @@ public class User {
 
     @Override
     public String toString() {
-        return super.toString();
+        StringBuilder r = new StringBuilder();
+        r.append("User: ");
+        r.append(name);
+        r.append("\t Balance: ");
+        r.append(balance);
+        r.append("\n Works at: ");
+        r.append(companyName);
+        r.append("\t Salary: ");
+        r.append(salary);
+        r.append("\t Employed for: ");
+        r.append(monthsOfEmployment);
+        r.append("\n Bank: ");
+        r.append(bank.getClass().getSimpleName());
+        r.append("\t ID: ");
+        r.append(id);
+        r.append("\n _____________________\n");
+        return r.toString();
     }
 
     public long getId() {
