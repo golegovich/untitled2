@@ -7,12 +7,12 @@ import java.util.Date;
  */
 public class Room {
 
-    long id;
-    int price;
-    int persons;
-    Date dateAvailableFrom;
-    String hotelName;
-    String cityName;
+    private long id;
+    private int price;
+    private int persons;
+    private Date dateAvailableFrom;
+    private String hotelName;
+    private String cityName;
 
 
     //constructor
