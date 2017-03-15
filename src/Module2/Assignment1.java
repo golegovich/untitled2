@@ -38,13 +38,13 @@ public class Assignment1{
 
 
         //max positive output
-        if (maxPositive(intArray) <0){
+        if (maxPositive(intArray) ==0){
             System.out.println("No positive values found");
         }
         else {
             System.out.println("\n\tMaximal positive of integers: " + maxPositive(intArray));
         }
-        if (maxPositive(doubleArray)<0){
+        if (maxPositive(doubleArray) ==0){
             System.out.println("No positive values found");
         }
         else    {
