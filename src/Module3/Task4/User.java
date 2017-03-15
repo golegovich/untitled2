@@ -32,7 +32,7 @@ public class User {
     }
 
     public void withdraw(int sum){
-        int balanceAfterWithdrawalWithFee = balance - sum - (int)(sum*(sum<1000? fee1:fee2)/100);
+        int balanceAfterWithdrawalWithFee = balance - sum -(sum*(sum<1000? fee1:fee2)/100);
         boolean isWithdrawalPermitted = balanceAfterWithdrawalWithFee >=0;
 
         log(Output.CURRENT_BALANCE + currency + balance);

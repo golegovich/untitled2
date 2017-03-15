@@ -10,9 +10,9 @@ import java.util.Objects;
 public class UseShapes {
     public static void main(String[] args) {
         List<Shape> listShape = new ArrayList<>();
-       listShape.add("Some");
         listShape.add(new Rectangle(6,4));
         listShape.add(new Rectangle(2,3));
+        //listShape.add();
 
     }
 
