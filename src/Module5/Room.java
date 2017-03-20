@@ -2,6 +2,7 @@ package Module5;
 
 import java.util.Date;
 
+
 /**
  * Created by George on 15/03/2017.
  */
@@ -82,7 +83,7 @@ public class Room {
     public int hashCode() {
         int result = price;
         result = 31 * result + persons;
-        result = 31 * result + (cityName != null ? cityName.hashCode():0);
+        result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
         return result;
     }
 
@@ -95,6 +96,27 @@ public class Room {
 
         if (price != room.price) return false;
         if (persons != room.persons) return false;
-        return cityName !=null ? cityName.equals(room.cityName) : room.cityName ==null;
+        return cityName != null ? cityName.equals(room.cityName) : room.cityName == null;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" + "id=" + id + ", price=" + price + ", persons" + persons + ", available from" + dateAvailableFrom +
+                ", hotel" + hotelName + " ,city" + cityName + "}";
+    }
+
+    public boolean equalsForAllFields(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Room room = (Room) obj;
+
+        if (id != room.id) return false;
+        if (price != room.price) return false;
+        if (persons != room.persons) return false;
+        if (dateAvailableFrom != null ? dateAvailableFrom.equals(room.dateAvailableFrom) : room.dateAvailableFrom != null)
+            return false;
+        if (hotelName != null ? hotelName.equals(room.hotelName) : room.cityName == null) return false;
+            return cityName != null ? cityName.equals(room.cityName) : room.cityName == null;
     }
 }
