@@ -80,11 +80,21 @@ public class Room {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int result = price;
+        result = 31 * result + persons;
+        result = 31 * result + (cityName != null ? cityName.hashCode():0);
+        return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Room room = (Room) obj;
+
+        if (price != room.price) return false;
+        if (persons != room.persons) return false;
+        return cityName !=null ? cityName.equals(room.cityName) : room.cityName ==null;
     }
 }
