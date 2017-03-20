@@ -1,6 +1,8 @@
 package Module5;
 
 
+import java.util.Arrays;
+
 /**
  * Created by George on 15/03/2017.
  */
@@ -19,7 +21,7 @@ public class Controller {
         int count = 0;
         Room[] rooms;
 
-        for (int i; i<apis.length; i++){
+        for (int i = 0; i<apis.length; i++){
             rooms = apis[i].findRooms(price, persons, city, hotel);
             System.arraycopy(rooms, 0, roomArray, count, rooms.length);
             count +=rooms.length;
@@ -62,5 +64,19 @@ public class Controller {
         for (int i=0; i<dao.length; i++){
             dao[i].update(room);
         }
+    }
+    public static Room[] findByIdInWholeDAO(long id, DAO[] dao){
+        int daoLength = dao.length;
+        Room[] rooms = new Room[daoLength];
+        for (int i=0; i<daoLength; i++){
+            rooms[i] = dao[i].findById(id);
+        }
+        return rooms;
+    }
+    private Room[] addElementToArray (Room [] roomsArray, Room newRoomsMember){
+
+        Room[] newRoomsArray = Arrays.copyOf(roomsArray, roomsArray.length+1);
+        newRoomsArray[newRoomsArray.length - 1] = newRoomsMember;
+        return newRoomsArray;
     }
 }
