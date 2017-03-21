@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class GoogleAPI implements API {
 
-    private DAO dao = new GoogleDAO;
+    private DAO dao = new GoogleDAO();
     public Room[] rooms = dao.getAll();
 
 
