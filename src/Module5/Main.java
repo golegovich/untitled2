@@ -10,7 +10,12 @@ public class Main {
         DAO[] dao = new DAO[]{new GoogleDAO()};
 
         System.out.println("\tDB before the changes: ");
+        printAllDAO(dao);
 
+        System.out.println("\t Request rooms: ");
+        printRoomArray(controller.requestrooms(500, 2, "Marseille", "L'Imerialle"));
+        printRoomArray(controller.requestrooms(200, 2, "Manchester", "Carrow Road Inn"));
+        printRoomArray(controller.requestrooms(300, 3, "Kyiv", "Intercontinental"));
     }
 
     private static void printAllDAO(DAO[] dao) {
