@@ -16,6 +16,9 @@ public class Main {
         printRoomArray(controller.requestrooms(500, 2, "Marseille", "L'Imerialle"));
         printRoomArray(controller.requestrooms(200, 2, "Manchester", "Carrow Road Inn"));
         printRoomArray(controller.requestrooms(300, 3, "Kyiv", "Intercontinental"));
+
+        System.out.println("\tCheck the GoogleDAO ");
+        printRoomArray(controller.check(dao[0], dao[1]));
     }
 
     private static void printAllDAO(DAO[] dao) {
