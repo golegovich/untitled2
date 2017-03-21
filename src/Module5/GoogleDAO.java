@@ -21,25 +21,59 @@ public class GoogleDAO implements DAO {
     @Override
     public Room save(Room room) {
         int count = RoomsInDBQuant(rooms);
+        rooms[count] = room;
+        System.out.println("Save: " + room);
+        return room;
     }
 
     @Override
     public boolean delete(Room room) {
+    for (int j = 0; j < rooms.length; j++){
+        if (rooms[j] !=null && rooms[j].equalsForAllFields(room)){
+            System.arraycopy(room, j+1, rooms, j, rooms.length - j - 1);
+            rooms[rooms.length - 1] = null;
+            System.out.println("Deleted: " + room);
+            return true;
+        }
+    }
+        System.out.println("No room in the DB");
         return false;
     }
 
     @Override
     public Room update(Room room) {
+        for (int j = 0; j < rooms.length; j++) {
+            if (rooms[j].getId() == room.getId()){
+                System.out.println("Update " + room);
+            }
+        }
+        System.out.println("Upd: No room in the DB");
         return null;
     }
-
     @Override
     public Room findById(long id) {
+        for (int j = 0; j < rooms.length; j++) {
+            if (id == rooms[j].getId()) {
+                System.out.println("Find by id: " + id + " " + rooms[j]);
+                return rooms[j];
+            }
+        }
+        System.out.println("Find by id: no room in the DB");
         return null;
     }
 
     @Override
     public Room[] getAll() {
         return new Room[0];
+    }
+
+    private int RoomsInDBQuant(Room[] rooms){
+        int c = 0;
+        for (Room room: rooms) {
+            if (room != null){
+                c++;
+            }
+        }
+        return c;
     }
 }
