@@ -64,6 +64,7 @@ public class Controller {
     public static void updateToAllDAO (Room room, DAO[] dao){
         for (int i=0; i<dao.length; i++){
             dao[i].update(room);
+
         }
     }
     public static Room[] findByIdInWholeDAO(long id, DAO[] dao){

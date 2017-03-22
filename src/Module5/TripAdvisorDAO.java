@@ -44,6 +44,8 @@ public class TripAdvisorDAO implements DAO{
         for (int j = 0; j < rooms.length; j++) {
             if (rooms[j].getId() == room.getId()){
                 System.out.println("Update " + room);
+                rooms[j] = room;
+                return room;
             }
         }
         System.out.println("Upd: No room in the DB");

@@ -44,7 +44,9 @@ public class GoogleDAO implements DAO {
     public Room update(Room room) {
         for (int j = 0; j < rooms.length; j++) {
             if (rooms[j].getId() == room.getId()){
+                rooms[j] = room;
                 System.out.println("Update " + room);
+                return room;
             }
         }
         System.out.println("Upd: No room in the DB");
