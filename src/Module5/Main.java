@@ -18,9 +18,9 @@ public class Main {
         printAllDAO(dao);
 
         System.out.println("\t Request rooms: ");
-        printRoomArray(controller.requestrooms(500, 2, "Marseille", "L'Imerialle"));
-        printRoomArray(controller.requestrooms(200, 2, "Manchester", "Carrow Road Inn"));
-        printRoomArray(controller.requestrooms(300, 3, "Kyiv", "Intercontinental"));
+        printRoomArray(controller.requestRooms(500, 2, "Marseille", "L'Imerialle"));
+        printRoomArray(controller.requestRooms(200, 2, "Manchester", "Carrow Road Inn"));
+        printRoomArray(controller.requestRooms(300, 3, "Kyiv", "Intercontinental"));
 
         System.out.println("\tCheck the GoogleDAO and the TripAdvisorDAO ");
         printRoomArray(controller.check(dao[0], dao[1]));
@@ -29,6 +29,11 @@ public class Main {
                 "Carrow Road Inn", "Manchester");
         System.out.println("\tTDB after the room been deleted: ");
         Controller.deleteFromAllDAO(roomToDelete, dao);
+        printAllDAO(dao);
+
+        Room roomToSave = new Room(44, 400, 2, LocalDate.of(2018, Month.MAY, 31), "Ritz", "Munich" );
+        System.out.println("\tDB after the room been saved: ");
+        controller.saveToAllDAO(roomToSave, dao);
         printAllDAO(dao);
 
         long id = 2;

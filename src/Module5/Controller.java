@@ -7,7 +7,8 @@ import java.util.Arrays;
  * Created by George on 15/03/2017.
  */
 public class Controller {
-    static API apis[] = new API[3];
+    private static final int NUMBER_OF_APIS = 3;
+    public static API apis[] = new API[NUMBER_OF_APIS];
 
     public Controller(){
         apis[0] = new BookingComAPI();
@@ -15,7 +16,7 @@ public class Controller {
         apis[2] = new TripAdvisorAPI();
     }
 
-    Room[] requestrooms(int price, int persons, String city, String hotel){
+    Room[] requestRooms(int price, int persons, String city, String hotel){
 
         Room[] roomArray = new Room[20];
         int count = 0;
