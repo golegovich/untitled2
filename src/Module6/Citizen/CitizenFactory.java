@@ -17,6 +17,15 @@ public class CitizenFactory {
         switch (rnd.nextInt(4)) {
             case 0:
                 citizens.add(createEnglishman());
+                break;
+            case 1:
+                citizens.add(createChinese());
+                break;
+            case 2:
+                citizens.add(createRussian());
+                break;
+            case 3:
+                citizens.add(createItalian());
         }
     }
     static public Citizen createEnglishman(){
