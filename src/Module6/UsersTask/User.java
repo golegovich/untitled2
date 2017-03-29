@@ -61,13 +61,29 @@ public final class User {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int res = (int)(id^(id>>>32));
+        res = 31 * res + (firstName != null ? firstName.hashCode() : 0);
+        res = 31 * res + (lastName != null ? lastName.hashCode() : 0);
+        res = 31 * res + salary;
+        res = 31 * res + balance;
+        return res;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
+    public boolean equals(Object o) {
+        if (this == o) return  true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (id !=user.id) return false;
+        if (salary != user.salary) return false;
+        if (balance != user.balance) return  false;
+        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null) return  false;
+        return lastName != null ? lastName.equals(user.lastName) : user.lastName == null;
+
+
+            }
 
     @Override
     public String toString() {
