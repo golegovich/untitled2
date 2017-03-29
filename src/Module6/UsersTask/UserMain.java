@@ -23,6 +23,10 @@ public class UserMain {
 
         System.out.println(Arrays.toString(UsersUtils.getUsersId(users)));
 
-        System.out.println(user1.toString());
+        System.out.println(user1.toStringDetailed());
+        System.out.println(user5.toStringDetailed());
+        UsersUtils.paySalaryToUsers(users);
+        System.out.println(user1.toStringDetailed());
+        System.out.println(user5.toStringDetailed());
     }
 }

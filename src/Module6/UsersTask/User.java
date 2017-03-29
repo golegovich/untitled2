@@ -87,6 +87,10 @@ public final class User {
 
     @Override
     public String toString() {
-        return super.toString();
+        return firstName + "/id = " + id;
+    }
+    public String toStringDetailed(){
+        return  "First Name: " + firstName + "; last name: " + lastName + "; id: " + id + "; salary: " + salary +
+                "; balance: " + balance +".";
     }
 }
