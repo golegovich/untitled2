@@ -1,4 +1,4 @@
-package Module6;
+package Module6.ArraysTask;
 
 import java.util.Arrays;
 
