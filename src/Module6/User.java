@@ -1,7 +1,8 @@
 package Module6;
 
 /**
- * Created by George on 29/03/2017.
+ * Created by Georgii Tarasenko
+ *  on 29/03/2017
  */
 public final class User {
 
