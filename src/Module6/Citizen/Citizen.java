@@ -1,9 +1,9 @@
-package Module6.Citizien;
+package Module6.Citizen;
 
 /**
  * Created by Georgii Tarasenko
  * on 29/03/2017
  */
-public interface Citizien {
+public interface Citizen {
     void sayHello();
 }
