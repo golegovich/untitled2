@@ -55,7 +55,7 @@ public class EUBank extends Bank {
         }
         return comission;
     }
-    @Override
+ /*    @Override
     public void withdrawOfUser(User user, int amount) {
         if (getLimitOfWithdrawal() > 0 && amount > getLimitOfWithdrawal()) {
             System.out.println("Withdrawal is impossible, the amount requested is out of the limit");
@@ -111,4 +111,4 @@ public class EUBank extends Bank {
         System.out.println("Your balance has been changed.\n");
 
     }
-}
+*/}

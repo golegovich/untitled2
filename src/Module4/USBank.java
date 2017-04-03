@@ -59,6 +59,7 @@ public class USBank extends Bank {
         return comission;
     }
 
+/*
     @Override
     public void withdrawOfUser(User user, int amount) {
         if (getLimitOfWithdrawal() > 0 && amount > getLimitOfWithdrawal()) {
@@ -115,4 +116,5 @@ public class USBank extends Bank {
         System.out.println("Your balance has been changed.\n");
 
     }
+*/
 }
