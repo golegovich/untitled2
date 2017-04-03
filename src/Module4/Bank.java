@@ -14,6 +14,8 @@ public abstract class Bank implements BankSystem {
     private double avrSalaryOfEmployee;
     private long rating;
     private long totalCapital;
+    private int limitOfWithdrawalUSD;
+    private int limitOfWithdrawalEUR;
 
     abstract int getLimitOfWithdrawal();
     abstract int getLimitOfFunding();
@@ -77,5 +79,13 @@ public abstract class Bank implements BankSystem {
 
     public void setTotalCapital(long totalCapital) {
         this.totalCapital = totalCapital;
+    }
+
+    public int setLimitOfWithdrawalUSD(int limit){
+        return limitOfWithdrawalUSD;
+    }
+
+    public int setLimitOfWithdrawalEUR(int limit){
+        return limitOfWithdrawalEUR;
     }
 }
