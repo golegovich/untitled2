@@ -15,7 +15,7 @@ public class BookingComAPI implements API {
         Room searchingForRoom = new Room(0, price, persons, null, hotel, city);
 
         for (int i = 0; i < rooms.length; i++) {
-            if (searchingForRoom.equals(rooms[i]) && rooms[i].getHotelName() == hotel)
+            if (searchingForRoom.equals(rooms[i]) && rooms[i].getHotelName().equals(hotel))
                 roomSearchArray = addElementToArray(roomSearchArray, rooms[i]);
         }
         return roomSearchArray;
