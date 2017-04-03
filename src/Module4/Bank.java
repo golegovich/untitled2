@@ -5,7 +5,7 @@ import java.util.Currency;
 /**
  * Created by George on 06/03/2017.
  */
-public abstract class Bank implements BankSystem {
+public abstract class Bank {
 
     private long id;
     private String bankCountry;

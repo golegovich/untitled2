@@ -55,6 +55,7 @@ public class ChinaBank extends Bank {
         }
         return comission;
     }
+/*
     @Override
     public void withdrawOfUser(User user, int amount) {
         if (getLimitOfWithdrawal() > 0 && amount > getLimitOfWithdrawal()) {
@@ -111,4 +112,5 @@ public class ChinaBank extends Bank {
         System.out.println("Your balance has been changed.\n");
 
     }
+*/
 }
