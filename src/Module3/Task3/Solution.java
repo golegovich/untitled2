@@ -20,7 +20,7 @@ public class Solution {
         CollegeStudent krasava2 = new CollegeStudent("Biruykov", new Course[]{course1,course2,course3});
         CollegeStudent krasava3 = new CollegeStudent("Dima", "Liubych", 4, new Course[]{course4, course5}, 12, "Marines Training Facility", 3, 11111994);
 
-        SpecialistStudent bog1 = new SpecialistStudent("Abubakar", "Al-Bagdadi", 5);
+        SpecialistStudent bog1 = new SpecialistStudent("Abubakar", "Al-Bagdadi", 5, 547);
         SpecialistStudent bog2 = new SpecialistStudent("Hussain", new Course[]{course1});
         SpecialistStudent bog3 = new SpecialistStudent(54762381);
     }

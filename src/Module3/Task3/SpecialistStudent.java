@@ -9,7 +9,7 @@ public class SpecialistStudent extends CollegeStudent {
     private String email;
 
 
-    public SpecialistStudent(String firstName, String lastName, int group) {
+    public SpecialistStudent(String firstName, String lastName, int group, long secretKey) {
         super(firstName, lastName, group);
     }
 
