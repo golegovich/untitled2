@@ -7,13 +7,13 @@ import java.util.Currency;
  */
 public abstract class Bank implements BankSystem {
 
-    long id;
-    String bankCountry;
-    Currency currency;
-    int numberOfEmployees;
-    double avrSalaryOfEmployee;
-    long rating;
-    long totalCapital;
+    private long id;
+    private String bankCountry;
+    private Currency currency;
+    private    int numberOfEmployees;
+    private double avrSalaryOfEmployee;
+    private long rating;
+    private long totalCapital;
 
     abstract int getLimitOfWithdrawal();
     abstract int getLimitOfFunding();
