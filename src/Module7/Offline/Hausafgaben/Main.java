@@ -2,10 +2,11 @@ package Module7.Offline.Hausafgaben;
 
 /**
  * Created by Georgii Tarasenko
- * on 30/03/2017
+ * on 15/05/2017
  */
-public class T1 {
+public class Main {
     public static void main(String[] args) {
+        User user1 = new User (1, "John", "Terry", "London", 10000);
 
     }
 }
