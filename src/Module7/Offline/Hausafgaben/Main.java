@@ -1,14 +1,7 @@
 package Module7.Offline.Hausafgaben;
-
-
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import java.awt.*;
+import java.util.*;
 import java.util.List;
-
-import static java.util.Comparator.reverseOrder;
-
 
 /**
  * Created by Georgii Tarasenko
@@ -44,7 +37,30 @@ public class Main {
         System.out.println("A collection of orders: ");
         orders.forEach(System.out::print);
 
-        Collections.sort(orders, reverseOrder());
-        print("Sorted in the decreasing order: ", orders);
+        Collections.sort(orders, Comparator.reverseOrder());
+        print("Collection sorted in the reversed order: ", orders);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static void print(String string, List orders){
+        System.out.println(string);
+        System.out.println(orders);
     }
 }

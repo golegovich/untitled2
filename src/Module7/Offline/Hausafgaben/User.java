@@ -58,4 +58,13 @@ public class User {
     public void setBalance(int balance) {
         this.balance = balance;
     }
+
+    @Override
+    public int hashCode() {
+        int result = getFirstName() != null ? getFirstName().hashCode():0;
+        result = 31 * result + (getLastName() != null ? getLastName().hashCode() : 0);
+        result = 31 * result + (getCity() != null ? getCity().hashCode() : 0);
+        result = 31 * result + getBalance();
+        return result;
+    }
 }

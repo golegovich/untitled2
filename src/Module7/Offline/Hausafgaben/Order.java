@@ -70,4 +70,14 @@ public class Order implements Comparable<Order>{
     public int compareTo(Order o) {
         return 0;
     }
+
+    @Override
+    public int hashCode() {
+        int result = getPrice();
+        result = 31*result+(getCurrency()!= null ? getCurrency().hashCode():0);
+        result = 31*result+(getItemName()!= null ? getItemName().hashCode():0);
+        result = 31*result+(getShopIdentificator()!= null ? getShopIdentificator().hashCode():0);
+        result = 31*result+(getUser() != null ? getUser().hashCode() : 0);
+        return  result;
+    }
 }
