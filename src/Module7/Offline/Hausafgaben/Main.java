@@ -1,8 +1,14 @@
 package Module7.Offline.Hausafgaben;
 
+
+
 import java.util.ArrayList;
-import java.util.Currency;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+
+import static java.util.Comparator.reverseOrder;
+
 
 /**
  * Created by Georgii Tarasenko
@@ -23,5 +29,22 @@ public class Main {
 
         List<Order> orders = new ArrayList<>(10);
 
+        Order order1 = new Order (1, 20, Currency.USD, "Mark1", "Gatlng", user1);
+        Order order2 = new Order (2, 10, Currency.UAH, "Mark2", "Browning", user2);
+        Order order3 = new Order (3, 40, Currency.UAH, "Mark3", "Colt", user4);
+        Order order4 = new Order (4, 500, Currency.USD, "Mark4", "Walter", user6);
+        Order order5 = new Order (5, 40, Currency.USD, "Mark3", "Colt", user4);
+        Order order6 = new Order (6, 600, Currency.UAH, "Mark6", "Kingsman", user7);
+        Order order7 = new Order (7, 400, Currency.UAH, "Mark7", "Gatlng", user8);
+        Order order8 = new Order (8, 100, Currency.USD, "Mark8", "Colt", user2);
+        Order order9 = new Order (9, 200, Currency.USD, "Mark9", "Gatlng", user10);
+        Order order10 = new Order (10, 450, Currency.UAH, "Mark10", "Walter", user5);
+
+        orders.addAll(Arrays.asList(order1, order2, order3, order4, order5, order6, order7, order8, order9, order10 ));
+        System.out.println("A collection of orders: ");
+        orders.forEach(System.out::print);
+
+        Collections.sort(orders, reverseOrder());
+        print("Sorted in the decreasing order: ", orders);
     }
 }
