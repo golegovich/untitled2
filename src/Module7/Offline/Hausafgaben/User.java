@@ -4,7 +4,7 @@ package Module7.Offline.Hausafgaben;
  * Created by Georgii Tarasenko
  * on 30/03/2017
  */
-public class User {
+public class User implements Comparable<User> {
     long id;
     String firstName;
     String lastName;
@@ -66,5 +66,10 @@ public class User {
         result = 31 * result + (getCity() != null ? getCity().hashCode() : 0);
         result = 31 * result + getBalance();
         return result;
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return 0;
     }
 }

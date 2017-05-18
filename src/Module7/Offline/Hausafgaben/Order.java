@@ -10,7 +10,7 @@ public class Order implements Comparable<Order>{
     private Currency currency;
     String itemName;
     String shopIdentificator;
-    User user;
+    private User user;
 
     public Order(long id, int price, Currency currency, String itemName, String shopIdentificator, User user) {
         this.id = id;
@@ -21,15 +21,11 @@ public class Order implements Comparable<Order>{
         this.user = user;
     }
 
-    public long getId() {
-        return id;
-    }
-    public int getPrice() {
+    public long getId() {return id;}
 
-        return price;
-    }
+    public int getPrice() {return price;}
 
-      public void setPrice(int price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -68,7 +64,19 @@ public class Order implements Comparable<Order>{
 
     @Override
     public int compareTo(Order o) {
-        return 0;
+        int priceEval =((Integer) (getPrice())).compareTo(o.getPrice());
+        if (priceEval !=0) return priceEval;
+
+        int itemNameEval = getItemName().compareTo(o.getItemName());
+        if (itemNameEval != 0) return itemNameEval;
+
+        int shopIdEval = getShopIdentificator().compareTo(o.getShopIdentificator());
+        if (shopIdEval != 0) return  shopIdEval;
+
+        int userEv = getUser().compareTo(o.getUser());
+        if(userEv != 0) return userEv;
+
+        return getCurrency().compareTo(o.getCurrency());
     }
 
     @Override
@@ -79,5 +87,17 @@ public class Order implements Comparable<Order>{
         result = 31*result+(getShopIdentificator()!= null ? getShopIdentificator().hashCode():0);
         result = 31*result+(getUser() != null ? getUser().hashCode() : 0);
         return  result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
