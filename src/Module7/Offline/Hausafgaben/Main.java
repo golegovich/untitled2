@@ -127,7 +127,7 @@ public class Main {
         uniqueOrders.forEach(order -> System.out.println(order));
 
         List<Order> ordersLess1500 = new ArrayList<>(orders);
-        ordersLess1500.removeIf(o -> o.getPrice() < 1500);
+        ordersLess1500.removeIf(o -> o.getPrice() > 1500);
         System.out.println("Less than 1500 removed: ");
         ordersLess1500.forEach((order -> System.out.println(order)));
 

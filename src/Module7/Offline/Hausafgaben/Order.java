@@ -108,7 +108,7 @@ public class Order implements Comparable<Order>{
 
     @Override
     public String toString() {
-        return "Order (" + "id: " + id + "; price: " + price + "; currency: " + "; item name: " + "; shop id: "
+        return "Order (" + "id: " + id  + "; price: " + price +  "; currency: " + currency +  "; item name: " + itemName + "; shop id: " + shopIdentificator
                 + "; user: " + user.getLastName() + ";" + user.getCity() + ")" + "\n";
     }
 }
