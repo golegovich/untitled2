@@ -70,6 +70,31 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User o) {
-        return 0;
+        int balanceEval = ((Integer) getBalance()).compareTo(o.getBalance());
+        if (balanceEval != 0) return  balanceEval;
+
+        int lastNameEv = getLastName().compareTo(o.getLastName());
+        if (lastNameEv != 0) return lastNameEv;
+
+        int firstNameEv = getFirstName(). compareTo(o.getFirstName());
+        if (firstNameEv != 0) return firstNameEv;
+
+        return getCity().compareTo(o.getCity());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return  true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (getBalance() != user.getBalance()) return false;
+        if (getFirstName() != null ? !getFirstName().equals(user.getFirstName()) : user.getFirstName() != null)
+            return false;
+        if (getLastName() != null ? !getLastName().equals(user.getLastName()) : user.getLastName() != null)
+            return  false;
+        return  getCity() != null ? getCity().equals(user.getCity()) : user.getCity() == null;
+    }
+
 }
