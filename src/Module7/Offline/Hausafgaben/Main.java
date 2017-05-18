@@ -107,21 +107,40 @@ public class Main {
         });
         System.out.println("Sorted by price growth and user' city: ");
         orders.forEach(System.out::print);
+
+        orders.sort((o1, o2) -> {
+            int itemNameEval = o1.getItemName().compareTo(o2.getItemName());
+            if (itemNameEval != 0){
+                return itemNameEval;
+            }
+            int shopIdEval = o1.getShopIdentificator().compareTo(o2.getShopIdentificator());
+            if (shopIdEval != 0){
+                return shopIdEval;
+            }
+            return o1.getUser().getCity().compareTo(o2.getUser().getCity());
+        });
+        System.out.println("Collection sorted in 'item name/shop id' order: ");
+        orders.forEach(System.out::print);
+
+        List<Order> uniqueOrders = new ArrayList<>(new HashSet<>(orders));
+        System.out.println("Duplictes removed: ");
+        uniqueOrders.forEach(order -> System.out.println(order));
+
+        List<Order> ordersLess1500 = new ArrayList<>(orders);
+        ordersLess1500.removeIf(o -> o.getPrice() < 1500);
+        System.out.println("Less than 1500 removed: ");
+        ordersLess1500.forEach((order -> System.out.println(order)));
+
+        List<Order> ordersUSD = new ArrayList<>(orders);
+        ordersUSD.removeIf(o -> o.getCurrency() != Currency.USD);
+        System.out.println("Orders USD: ");
+        orders.forEach(order -> System.out.println(order));
+
+        List<Order> ordersUAH = new ArrayList<>(orders);
+        ordersUAH.removeAll(ordersUSD);
+        System.out.println("Orders in UAH: ");
+        ordersUAH.forEach(order -> System.out.println(order) );
     }
-
-
-       /* orders.sort((o1, o2) -> {
-        int itemNameEval = o1.getItemName().compareTo(o2.getItemName());
-        if (itemNameEval != 0){
-            return itemNameEval;
-        }
-        int shopIdEval = o1.getShopIdentificator().compareTo(o2.getShopIdentificator());
-        if (shopIdEval != 0) {
-            return shopIdEval;
-        }
-        return o1.getUser().getCity().compareTo(o2.getUser().getCity());
-        }*/
-
 
     public static void print(String string, List orders){
         System.out.println(string);
