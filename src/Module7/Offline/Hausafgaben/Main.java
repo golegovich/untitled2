@@ -3,6 +3,9 @@ import java.awt.*;
 import java.util.*;
 import java.util.List;
 
+import static java.util.Comparator.reverseOrder;
+
+
 /**
  * Created by Georgii Tarasenko
  * on 15/05/2017
@@ -37,7 +40,7 @@ public class Main {
         System.out.println("A collection of orders: ");
         orders.forEach(System.out::print);
 
-        Collections.sort(orders, Comparator.reverseOrder());
+        /*Collections.sort(orders, reverseOrder());
         print("Collection sorted in the reversed order: ", orders);
 
         Collections.sort(orders, new Comparator<Order>() {
@@ -88,7 +91,24 @@ public class Main {
         for (String key : (uniqueCitiesMap.keySet())){
             print(key.toString(), uniqueCitiesMap.get(key));
         }
+*/
+    //******************************************************
+
+        orders.sort(reverseOrder());
+        System.out.println("Collections decreasing: " );
+        orders.forEach(System.out::print);
+
+        orders.sort((Order o1, Order o2) -> {
+            int priceGrowthEval = ((Integer)(o1.getPrice())).compareTo(o2.getPrice());
+            if (priceGrowthEval != 0){
+                return o1.getUser().getCity().compareTo(o2.getUser().getCity());
+            }
+            return o1.getUser().getCity().compareTo(o2.getUser().getCity());
+        });
+        System.out.println("Sorted by price growth and user' city: ");
+        orders.forEach(System.out::print);
     }
+
 
        /* orders.sort((o1, o2) -> {
         int itemNameEval = o1.getItemName().compareTo(o2.getItemName());
