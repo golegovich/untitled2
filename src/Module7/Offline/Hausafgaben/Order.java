@@ -94,10 +94,21 @@ public class Order implements Comparable<Order>{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
+        Order order = (Order) o;
+
+        if (getPrice() != order.getPrice()) return false;
+        if (getCurrency() != order.getCurrency()) return  false;
+        if (getItemName() != null ? !getItemName().equals( order.getItemName()): order.getItemName() != null)
+            return false;
+        if (getShopIdentificator() != null ? !getShopIdentificator().equals(order.getShopIdentificator()): order.getShopIdentificator()!=null )
+            return false;
+        return  getUser() != null ? getUser().equals(order.getUser()) : order.getUser() == null;
+
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Order (" + "id: " + id + "; price: " + price + "; currency: " + "; item name: " + "; shop id: "
+                + "; user: " + user.getLastName() + ";" + user.getCity() + ")" + "\n";
     }
 }
