@@ -70,13 +70,38 @@ public class Main {
                 ordersUAH.add(order);
             else if (order.getCurrency() == Currency.USD)
                 ordersUSD.add(order);}
-            print("USD orders: ", ordersUSD);
-            print("UAH orders: ", ordersUAH);
-
+        print("USD orders: ", ordersUSD);
+        print("UAH orders: ", ordersUAH);
 
         //dividing list into multitude of lists on the basis of User' cities
-
+        Map<String, List<Order>> uniqueCitiesMap = new TreeMap<>();
+        String city;
+        for (Order order : orders) {
+            city = order.getUser().getCity();
+            List<Order> list = uniqueCitiesMap.get(city);
+            if (list == null) {
+            list = new ArrayList<Order> ();
+            uniqueCitiesMap.put(city, list);
+            }
+            list.add(order);
+        }
+        for (String key : (uniqueCitiesMap.keySet())){
+            print(key.toString(), uniqueCitiesMap.get(key));
+        }
     }
+
+       /* orders.sort((o1, o2) -> {
+        int itemNameEval = o1.getItemName().compareTo(o2.getItemName());
+        if (itemNameEval != 0){
+            return itemNameEval;
+        }
+        int shopIdEval = o1.getShopIdentificator().compareTo(o2.getShopIdentificator());
+        if (shopIdEval != 0) {
+            return shopIdEval;
+        }
+        return o1.getUser().getCity().compareTo(o2.getUser().getCity());
+        }*/
+
 
     public static void print(String string, List orders){
         System.out.println(string);
