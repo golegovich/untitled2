@@ -23,16 +23,16 @@ public class MainTreeSet {
 
         TreeSet<Order> orders = new TreeSet<>();
 
-        orders.add(new Order(1, 20, Currency.USD, "Mark1", "Gatlng", user1);
-        orders.add(new Order(2, 1500, Currency.UAH, "Mark2", "Browning", user2);
-        orders.add(new Order(3, 1500, Currency.UAH, "Mark3", "Colt", user4);
-        orders.add(new Order(4, 500, Currency.USD, "Mark4", "Walter", user6);
-        orders.add(new Order(5, 40, Currency.USD, "Mark3", "Colt", user4);
-        orders.add(new Order(6, 600, Currency.UAH, "Mark6", "Kingsman", user7);
-        orders.add(new Order(7, 400, Currency.UAH, "Mark7", "Gatlng", user8);
-        orders.add(new Order(8, 100, Currency.USD, "Mark8", "Colt", user2);
-        orders.add(new Order(9, 200, Currency.USD, "Mark9", "Gatlng", user10);
-        orders.add(new Order(10, 450, Currency.UAH, "Mark10", "Walter", user5);
+        orders.add(new Order(1, 20, Currency.USD, "Mark1", "Gatlng", user1));
+        orders.add(new Order(2, 1500, Currency.UAH, "Mark2", "Browning", user2));
+        orders.add(new Order(3, 1500, Currency.UAH, "Mark3", "Colt", user4));
+        orders.add(new Order(4, 500, Currency.USD, "Mark4", "Walter", user6));
+        orders.add(new Order(5, 40, Currency.USD, "Mark3", "Colt", user4));
+        orders.add(new Order(6, 600, Currency.UAH, "Mark6", "Kingsman", user7));
+        orders.add(new Order(7, 400, Currency.UAH, "Mark7", "Gatlng", user8));
+        orders.add(new Order(8, 100, Currency.USD, "Mark8", "Colt", user2));
+        orders.add(new Order(9, 200, Currency.USD, "Mark9", "Gatlng", user10));
+        orders.add(new Order(10, 450, Currency.UAH, "Mark10", "Walter", user5));
 
         System.out.println("Orders :" + orders);
         System.out.println(containsOrderWithLastName(orders, "Petrov"));
