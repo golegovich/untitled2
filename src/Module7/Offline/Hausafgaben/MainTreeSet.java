@@ -35,7 +35,7 @@ public class MainTreeSet {
         orders.add(new Order(9, 200, Currency.USD, "Mark9", "Gatlng", user10));
         orders.add(new Order(10, 450, Currency.UAH, "Mark10", "Walter", user5));
 
-        System.out.println("Orders :" + orders);
+        System.out.println("Orders: " + orders);
         System.out.println(containsOrderWithLastName(orders, "Petrov"));
 
         Order maxPrice = ordersWithMaxPrice(orders);
