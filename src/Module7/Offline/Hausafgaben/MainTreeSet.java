@@ -1,5 +1,6 @@
 package Module7.Offline.Hausafgaben;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.TreeSet;
 
@@ -36,6 +37,12 @@ public class MainTreeSet {
 
         System.out.println("Orders :" + orders);
         System.out.println(containsOrderWithLastName(orders, "Petrov"));
+
+        Order maxPrice = ordersWithMaxPrice(orders);
+        System.out.println("Order with max price: \n" + maxPrice);
+
+        removeOrdersWithCurrencyUSD(orders);
+        System.out.println("Orders made with USD: \n" + orders);
     }
 
     public static void removeOrdersWithCurrencyUSD (TreeSet<Order> orders){
