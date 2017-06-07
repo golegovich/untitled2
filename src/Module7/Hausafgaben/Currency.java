@@ -1,4 +1,4 @@
-package Module7.Offline.Hausafgaben;
+package Module7.Hausafgaben;
 
 /**
  * Created by Georgii Tarasenko

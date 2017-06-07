@@ -1,5 +1,4 @@
-package Module7.Offline.Hausafgaben;
-import java.awt.*;
+package Module7.Hausafgaben;
 import java.util.*;
 import java.util.List;
 

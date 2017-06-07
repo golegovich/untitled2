@@ -1,6 +1,5 @@
-package Module7.Offline.Hausafgaben;
+package Module7.Hausafgaben;
 
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.TreeSet;
 

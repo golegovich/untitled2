@@ -2,7 +2,6 @@ package Module7.Offline;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by George on 09/03/2017.

@@ -1,4 +1,4 @@
-package Module7.Offline.Hausafgaben;
+package Module7.Hausafgaben;
 
 import java.util.ArrayList;
 import java.util.Arrays;
