@@ -1,51 +1,63 @@
 package Module8.Hausaufgaben;
 
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Georgii Tarasenko
  * on 07.06.2017.
  * ©. All rights reserved.
  */
-public final class InterfaceImpl <T extends Food> implements  IManageSystem {
+public final class InterfaceImpl <T extends Food> implements  IManageSystem<T> {
+
+    private Map<T, Double> database = new HashMap<>();
+
     @Override
-    public Object save(Object obj, double price) {
-        return null;
+    public T save(T food, double price) {
+        database.put(food, price);
+        return  food;
     }
 
     @Override
-    public Object save(Object food) {
-        return null;
+    public T save(T food) {
+        database.put(food, 0.0);
+        return food;
     }
-
+    public void saveAll (Map <? extends T, Double> newDb){
+        database.putAll(newDb);
+    }
     @Override
-    public void delete(Object obj) {
-
+    public void delete(T food) {
+        database.remove(food);
     }
 
     @Override
     public void deleteById(int id) {
-
+        Set<T> setOfFood = database.keySet();
+        setOfFood.removeIf(t -> t.getId() == id);
     }
 
     @Override
-    public Object get(int id) {
-        return null;
+    public T get(int id) {
+        Set<T> setOfFood = database.keySet();
+        for (T food : setOfFood) {
+            if (food.getId() == id)
+                return  food;
+            }
+            return null;
+        }
+
+    @Override
+    public Double getPrice(T food) {
+        return database.get(food);
     }
 
     @Override
-    public Double getPrice(Object obj) {
-        return null;
-    }
-
-    @Override
-    public Set getProducts() {
-        return null;
+    public Set<T> getProducts() {
+        return database.keySet();
     }
 
     @Override
     public List<Double> getPrices() {
-        return null;
+        return new ArrayList<> (database.values());
     }
 }
