@@ -1,4 +1,7 @@
-package Module8.Hausaufgaben;
+package Module8.Hausaufgaben.Food;
+
+import Module8.Hausaufgaben.Country;
+import Module8.Hausaufgaben.idGenerator;
 
 /**
  * Created by Georgii Tarasenko
