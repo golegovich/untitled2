@@ -4,4 +4,10 @@ package Module8.Hausaufgaben;
  * Created by Юлия on 07.06.2017.
  */
 public class idGenerator {
+    private static long counter;
+    private idGenerator (){
+    }
+    public static long generateId(){
+        return ++counter;
+    }
 }
