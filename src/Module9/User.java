@@ -4,7 +4,7 @@ package Module9;
  * Created by Georgii Tarasenko
  * on 30/03/2017
  */
-public class User implements Comparable<User> {
+public class User  {
     long id;
     String firstName;
     String lastName;
@@ -67,6 +67,7 @@ public class User implements Comparable<User> {
         result = 31 * result + getBalance();
         return result;
     }
+/*
 
     @Override
     public int compareTo(User o) {
@@ -81,6 +82,7 @@ public class User implements Comparable<User> {
 
         return getCity().compareTo(o.getCity());
     }
+*/
 
     @Override
     public boolean equals(Object o) {

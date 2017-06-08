@@ -4,7 +4,7 @@ package Module9;
  * Created by Georgii Tarasenko
  * on 15/05/2017
  */
-public class Order implements Comparable<Order>{
+public class Order{
     long id;
     int price;
     private Currency currency;
@@ -62,6 +62,7 @@ public class Order implements Comparable<Order>{
     }
 
 
+/*
     @Override
     public int compareTo(Order o) {
         int priceEval =((Integer) (getPrice())).compareTo(o.getPrice());
@@ -78,6 +79,7 @@ public class Order implements Comparable<Order>{
 
         return getCurrency().compareTo(o.getCurrency());
     }
+*/
 
     @Override
     public int hashCode() {

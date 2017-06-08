@@ -1,7 +1,7 @@
 package Module9;
-import com.sun.org.apache.xpath.internal.operations.Or;
-
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 
@@ -15,7 +15,7 @@ public final class Orders {
     private Orders(){
     }
 
-    public static void sortDecreasing (List<Order> orders){
+    public static void sortDecreasing(List<Order> orders){
         orders.sort(Comparator.comparing(Order::getPrice, Comparator.reverseOrder()));
     }
 

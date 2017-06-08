@@ -2,19 +2,19 @@ package Module9;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-
-import static java.util.Comparator.reverseOrder;
 
 
 /**
  * Created by Georgii Tarasenko
  * on 15/05/2017
+ * Re-done by the same author
+ * on 08/06/2017
+ * ©.
  */
 public class Main {
     public static void main(String[] args) {
-         User user1 = new User(1, "John", "Terry", "London", 10000);
+        User user1 = new User(1, "John", "Terry", "London", 10000);
         User user2 = new User(2, "Eden", "Hazard", "Bruxelles", 20000);
         User user3 = new User(3, "Diego", "Costa", "Sao Paolo", 15000);
         User user4 = new User(4, "Marcos", "Alonso", "Seville", 9000);
@@ -42,6 +42,37 @@ public class Main {
         System.out.println("A collection of orders: ");
         orders.forEach(System.out::print);
 
+
+        System.out.println("Collection sorted decreased order: ");
+        Module9.Orders.sortDecreasing(orders);
+        orders.forEach(System.out:: print);
+
+        System.out.println("Collection sorted by price and city: ");
+        Module9.Orders.sortPriceCity(orders);
+        orders.forEach(System.out::print);
+
+        System.out.println("Collection sorted by item name, shop ID and user city: ");
+        Module9.Orders.sortItemShopidCity(orders);
+        orders.forEach(System.out::print);
+
+        System.out.println("Duplicate orders removed: ");
+        List<Order> uniqueOrders = Module9.Orders.getUnique(orders);
+        uniqueOrders.forEach(System.out::print);
+
+        System.out.println("Orders with price <= 1500: ");
+        List<Order> ordersLess1500 = Module9.Orders.getOrdersLess1500(orders);
+        ordersLess1500.forEach(System.out::print);
+
+        System.out.println("Orders in USD: ");
+        List<Order> ordersUSD = Module9.Orders.defineCurrency(orders, Currency.USD);
+        ordersUSD.forEach(System.out::print);
+
+        String lastName = "Petrov";
+        System.out.println("Orders containing the last name:  " + Module9.Orders.checkLN(orders, lastName));
+
+        System.out.println("Deleted orders in USD: ");
+        Module9.Orders.removeUSD(orders);
+        orders.forEach(System.out::print);
         /*Collections.sort(orders, reverseOrder());
         print("Collection sorted in the reversed order: ", orders);
 
@@ -94,9 +125,9 @@ public class Main {
             print(key.toString(), uniqueCitiesMap.get(key));
         }
 */
-    //******************************************************
+        //******************************************************
 
-        orders.sort(reverseOrder());
+        /*orders.sort(reverseOrder());
         System.out.println("Collections decreasing: " );
         orders.forEach(System.out::print);
 
@@ -142,10 +173,12 @@ public class Main {
         ordersUAH.removeAll(ordersUSD);
         System.out.println("Orders in UAH: ");
         ordersUAH.forEach(order -> System.out.println(order) );
+    */
     }
 
-    public static void print(String string, List orders){
+
+  /*  public static void print(String string, List orders){
         System.out.println(string);
         System.out.println(orders);
-    }
+    }*/
 }
