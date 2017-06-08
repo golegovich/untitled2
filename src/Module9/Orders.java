@@ -1,5 +1,6 @@
 package Module9;
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 /**
@@ -24,5 +25,13 @@ public final class Orders {
     public static void sortItemShopidCity (List<Order> orders){
         orders.sort(Comparator.comparing(Order::getItemName).thenComparing(Order::getShopIdentificator)
                 .thenComparing(o -> o.getUser().getCity() ));
+    }
+
+    public static List<Order> getOrdersLess1500(List<Order> orders) {
+        return orders.stream().filter((Order o) -> o.getPrice() >= 1500)
+                .collect(Collectors.toList());
+    }
+    public static List<Order> getUnique (List<Order> orders) {
+        return orders.stream().distinct().collect(Collectors.toList());
     }
 }
