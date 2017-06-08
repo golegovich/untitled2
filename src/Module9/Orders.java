@@ -1,4 +1,6 @@
 package Module9;
+import com.sun.org.apache.xpath.internal.operations.Or;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -33,5 +35,20 @@ public final class Orders {
     }
     public static List<Order> getUnique (List<Order> orders) {
         return orders.stream().distinct().collect(Collectors.toList());
+    }
+
+    public static List<Order> defineCurrency(List<Order> orders, Currency currency) {
+        return orders.stream().filter(o -> o.getCurrency() == currency).collect(Collectors.toList());
+    }
+    public static Map<String, List<Order>> sortUniqueCities (List<Order> orders) {
+        return orders.stream().collect(Collectors.groupingBy(order -> order.getUser().getCity()));
+    }
+
+    public static boolean checkLN(List<Order> orders, String lastName) {
+        return (orders.stream().anyMatch(order -> order.getUser().getLastName() == lastName));
+    }
+
+    public static void removeUSD(List<Order> orders) {
+        orders.removeIf(order -> order.getCurrency() == Currency.USD);
     }
 }
